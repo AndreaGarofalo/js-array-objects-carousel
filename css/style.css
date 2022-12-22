@@ -1,0 +1,22 @@
+.container {
+  height: 100vh;
+}
+
+#carousel {
+  width: 900px;
+  height: 400px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+#text {
+  color: white;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  text-align: end;
+  padding: 5px 20px;
+}
