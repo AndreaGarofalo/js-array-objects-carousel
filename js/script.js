@@ -54,14 +54,14 @@ const data = [
 const prev = document.getElementById("prev");
 const next = document.getElementById("next");
 
-const gallery = document.querySelector("#carousel .gallery");
+const carouselGallery = document.querySelector("#carousel .gallery");
 
 // creo un ciclo for per creare le immagini e i testi
 
-let galleryElement = " ";
+let carouselGalleryElement = " ";
 
 for (let i = 0; i < data.length; i++) {
-  galleryElement += `<img class="img-fluid" src="${data[i].image}" alt="${data[i].title}" />
+  carouselGalleryElement += `<img class="img-fluid" src="${data[i].image}" alt="${data[i].title}" />
   <div class="text">
   <h2>${data[i].title}</h2>
   <p>${data[i].text}</p>
@@ -86,24 +86,55 @@ for (let i = 0; i < data.length; i++) {
   // textElement.appendChild(paragraph);
 }
 
-gallery.innerHTML = galleryElement;
+carouselGallery.innerHTML = carouselGalleryElement;
 
 // prendo le immagini e i testi
 
 const images = document.querySelectorAll(".gallery img");
 const text = document.querySelectorAll(".gallery .text");
 
-// creo una variabile active index da usare con i bottoni
+// aggiungo la thumbnail
+
+const thumbnailGallery = document.querySelector(
+  "#thumbnail .thumbnail-gallery"
+);
+
+// creo un ciclo for per creare le immagini
+let thumbnailElement = "";
+for (let i = 0; i < data.length; i++) {
+  thumbnailElement += `<img class="img-fluid" src="${data[i].image}" alt="${data[i].title}" />`;
+}
+
+thumbnailGallery.innerHTML = thumbnailElement;
+
+const imagesPreview = document.querySelectorAll(".thumbnail-gallery img");
 
 let currentActiveIndex = 0;
 images[currentActiveIndex].classList.add("active");
 text[currentActiveIndex].classList.add("active");
+imagesPreview[currentActiveIndex].classList.add("active");
+
+for (let i = 0; i < data.length; i++) {
+  const thumb = imagesPreview[i];
+  thumb.addEventListener("click", function () {
+    images[currentActiveIndex].classList.remove("active");
+    text[currentActiveIndex].classList.remove("active");
+    imagesPreview[currentActiveIndex].classList.remove("active");
+
+    currentActiveIndex = i;
+
+    images[currentActiveIndex].classList.add("active");
+    text[currentActiveIndex].classList.add("active");
+    imagesPreview[currentActiveIndex].classList.add("active");
+  });
+}
 
 // creo l'event listener del bottone next
 
 next.addEventListener("click", function () {
   images[currentActiveIndex].classList.remove("active");
   text[currentActiveIndex].classList.remove("active");
+  imagesPreview[currentActiveIndex].classList.remove("active");
   currentActiveIndex++;
 
   if (currentActiveIndex === images.length) {
@@ -112,6 +143,7 @@ next.addEventListener("click", function () {
 
   images[currentActiveIndex].classList.add("active");
   text[currentActiveIndex].classList.add("active");
+  imagesPreview[currentActiveIndex].classList.add("active");
 });
 
 // creo l'event listener del bottone prev
@@ -119,6 +151,8 @@ next.addEventListener("click", function () {
 prev.addEventListener("click", function () {
   images[currentActiveIndex].classList.remove("active");
   text[currentActiveIndex].classList.remove("active");
+  imagesPreview[currentActiveIndex].classList.remove("active");
+
   currentActiveIndex--;
 
   if (currentActiveIndex < 0) {
@@ -127,6 +161,5 @@ prev.addEventListener("click", function () {
 
   images[currentActiveIndex].classList.add("active");
   text[currentActiveIndex].classList.add("active");
+  imagesPreview[currentActiveIndex].classList.add("active");
 });
-
-// aggiungo la thumbnail
