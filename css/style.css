@@ -5,8 +5,8 @@
 #carousel {
   width: 900px;
   height: 450px;
-  position: relative;
   overflow: hidden;
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -15,8 +15,10 @@
 #thumbnail {
   width: 300px;
   height: 450px;
+  position: relative;
   overflow: hidden;
 }
+
 #thumbnail img {
   object-fit: cover;
   width: 300px;
@@ -36,20 +38,19 @@
 
 .fa-solid {
   font-size: 25px;
-  padding: 20px;
   position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
+  left: 50%;
+  transform: translateX(-50%);
   color: white;
   cursor: pointer;
 }
 
 #prev {
-  left: 5px;
+  top: 5px;
 }
 
 #next {
-  right: 5px;
+  bottom: 5px;
 }
 
 .gallery .text {
