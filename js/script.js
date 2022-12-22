@@ -88,3 +88,21 @@ prev.addEventListener("click", function () {
   images[currentActiveIndex].classList.add("active");
   text[currentActiveIndex].classList.add("active");
 });
+
+const gallery = document.querySelector("#carousel .gallery");
+
+for (let i = 0; i < data.length; i++) {
+  const imageElement = document.createElement("img");
+  imageElement.src = data[i].image;
+  imageElement.alt = data[i].title;
+  gallery.appendChild(imageElement);
+  const text = document.createElement("div");
+  text.classList.add("text");
+  gallery.appendChild(text);
+  const title = document.createElement("h2");
+  title.innerText = data[i].title;
+  text.appendChild(title);
+  const paragraph = document.createElement("p");
+  paragraph.innerText = data[i].text;
+  text.appendChild(paragraph);
+}
