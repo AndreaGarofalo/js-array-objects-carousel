@@ -58,22 +58,35 @@ const gallery = document.querySelector("#carousel .gallery");
 
 // creo un ciclo for per creare le immagini e i testi
 
+let galleryElement = " ";
+
 for (let i = 0; i < data.length; i++) {
-  const imageElement = document.createElement("img");
-  imageElement.classList.add("img-fluid");
-  imageElement.src = data[i].image;
-  imageElement.alt = data[i].title;
-  gallery.appendChild(imageElement);
-  const text = document.createElement("div");
-  text.classList.add("text");
-  gallery.appendChild(text);
-  const title = document.createElement("h2");
-  title.innerText = data[i].title;
-  text.appendChild(title);
-  const paragraph = document.createElement("p");
-  paragraph.innerText = data[i].text;
-  text.appendChild(paragraph);
+  galleryElement += `<img class="img-fluid" src="${data[i].image}" alt="${data[i].title}" />
+  <div class="text">
+  <h2>${data[i].title}</h2>
+  <p>${data[i].text}</p>
+  </div>`;
+
+  //   const imageElement = document.createElement("img");
+  //   imageElement.classList.add("img-fluid");
+  //   imageElement.src = data[i].image;
+  //   imageElement.alt = data[i].title;
+  //   gallery.appendChild(imageElement);
+
+  //   const textElement = document.createElement("div");
+  //   textElement.classList.add("text");
+  //   gallery.appendChild(textElement);
+
+  //   const title = document.createElement("h2");
+  //   title.innerText = data[i].title;
+  //   textElement.appendChild(title);
+
+  //   const paragraph = document.createElement("p");
+  //   paragraph.innerText = data[i].text;
+  // textElement.appendChild(paragraph);
 }
+
+gallery.innerHTML = galleryElement;
 
 // prendo le immagini e i testi
 
