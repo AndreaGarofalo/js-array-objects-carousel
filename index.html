@@ -6,6 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
       rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap.min.css"
       integrity="sha512-SbiR/eusphKoMVVXysTKG/7VseWii+Y3FdHrt0EpKgpToZeemhqHeZeLWLhJutz/2ut2Vw1uQEj2MbRF+TVBUA=="
       crossorigin="anonymous"
@@ -16,14 +22,52 @@
   <body>
     <div class="container d-flex align-items-center justify-content-center">
       <div id="carousel">
-        <img class="img-fluid" src="img/01.webp" alt="" />
-        <div id="text">
-          <h1 id="title">Marvel's Spiderman Miles Morale</h1>
-          <p id="description">
-            Experience the rise of Miles Morales as the new hero masters
-            incredible, explosive new powers to become his own Spider-Man.
-          </p>
+        <i id="prev" class="fa-solid fa-circle-chevron-left"></i>
+        <div class="gallery">
+          <img src="img/01.webp" alt="" class="img-fluid" />
+          <div class="text">
+            <h2 class="title">Marvel's Spiderman Miles Morale</h2>
+            <p class="paragraph">
+              Experience the rise of Miles Morales as the new hero masters
+              incredible, explosive new powers to become his own Spider-Man.
+            </p>
+          </div>
+          <img src="img/02.webp" alt="" class="img-fluid" />
+          <div class="text">
+            <h2 class="title">Ratchet & Clank: Rift Apart</h2>
+            <p class="paragraph">
+              Go dimension-hopping with Ratchet and Clank as they take on an
+              evil emperor from another reality.
+            </p>
+          </div>
+          <img src="img/03.webp" alt="" class="img-fluid" />
+          <div class="text">
+            <h2 class="title">Fortnite</h2>
+            <p class="paragraph">
+              Grab all of your friends and drop into Epic Games Fortnite, a
+              massive 100 - player face - off that combines looting, crafting,
+              shootouts and chaos.
+            </p>
+          </div>
+          <img src="img/04.webp" alt="" class="img-fluid" />
+          <div class="text">
+            <h2 class="title">Stray</h2>
+            <p class="paragraph">
+              Lost, injured and alone, a stray cat must untangle an ancient
+              mystery to escape a long-forgotten city
+            </p>
+          </div>
+          <img src="img/05.webp" alt="" class="img-fluid" />
+          <div class="text">
+            <h2 class="title">Marvel's Avengers</h2>
+            <p class="paragraph">
+              Marvel's Avengers is an epic, third-person, action-adventure game
+              that combines an original, cinematic story with single-player and
+              co-operative gameplay.
+            </p>
+          </div>
         </div>
+        <i id="next" class="fa-solid fa-circle-chevron-right"></i>
       </div>
       <div id="thumbnail"></div>
     </div>

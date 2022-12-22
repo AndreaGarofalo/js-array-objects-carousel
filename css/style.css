@@ -5,18 +5,51 @@
 #carousel {
   width: 900px;
   height: 400px;
+  position: relative;
   overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
-  position: relative;
 }
 
-#text {
+.gallery img {
+  min-width: 900px;
+  min-height: 400px;
+  display: none;
+}
+
+.gallery img.active {
+  display: block;
+}
+
+.fa-solid {
+  font-size: 25px;
+  padding: 20px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color: white;
+  cursor: pointer;
+}
+
+#prev {
+  left: 5px;
+}
+
+#next {
+  right: 5px;
+}
+
+.gallery .text {
   color: white;
   position: absolute;
   bottom: 0;
   right: 0;
   text-align: end;
   padding: 5px 20px;
+  display: none;
+}
+
+.gallery .text.active {
+  display: block;
 }
