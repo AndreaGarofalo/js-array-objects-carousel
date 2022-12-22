@@ -115,3 +115,5 @@ prev.addEventListener("click", function () {
   images[currentActiveIndex].classList.add("active");
   text[currentActiveIndex].classList.add("active");
 });
+
+// aggiungo la thumbnail
