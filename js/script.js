@@ -54,14 +54,39 @@ const data = [
 const prev = document.getElementById("prev");
 const next = document.getElementById("next");
 
+const gallery = document.querySelector("#carousel .gallery");
+
+// creo un ciclo for per creare le immagini e i testi
+
+for (let i = 0; i < data.length; i++) {
+  const imageElement = document.createElement("img");
+  imageElement.classList.add("img-fluid");
+  imageElement.src = data[i].image;
+  imageElement.alt = data[i].title;
+  gallery.appendChild(imageElement);
+  const text = document.createElement("div");
+  text.classList.add("text");
+  gallery.appendChild(text);
+  const title = document.createElement("h2");
+  title.innerText = data[i].title;
+  text.appendChild(title);
+  const paragraph = document.createElement("p");
+  paragraph.innerText = data[i].text;
+  text.appendChild(paragraph);
+}
+
+// prendo le immagini e i testi
+
 const images = document.querySelectorAll(".gallery img");
 const text = document.querySelectorAll(".gallery .text");
 
-console.log(text);
+// creo una variabile active index da usare con i bottoni
 
 let currentActiveIndex = 0;
 images[currentActiveIndex].classList.add("active");
 text[currentActiveIndex].classList.add("active");
+
+// creo l'event listener del bottone next
 
 next.addEventListener("click", function () {
   images[currentActiveIndex].classList.remove("active");
@@ -76,6 +101,8 @@ next.addEventListener("click", function () {
   text[currentActiveIndex].classList.add("active");
 });
 
+// creo l'event listener del bottone prev
+
 prev.addEventListener("click", function () {
   images[currentActiveIndex].classList.remove("active");
   text[currentActiveIndex].classList.remove("active");
@@ -88,21 +115,3 @@ prev.addEventListener("click", function () {
   images[currentActiveIndex].classList.add("active");
   text[currentActiveIndex].classList.add("active");
 });
-
-const gallery = document.querySelector("#carousel .gallery");
-
-for (let i = 0; i < data.length; i++) {
-  const imageElement = document.createElement("img");
-  imageElement.src = data[i].image;
-  imageElement.alt = data[i].title;
-  gallery.appendChild(imageElement);
-  const text = document.createElement("div");
-  text.classList.add("text");
-  gallery.appendChild(text);
-  const title = document.createElement("h2");
-  title.innerText = data[i].title;
-  text.appendChild(title);
-  const paragraph = document.createElement("p");
-  paragraph.innerText = data[i].text;
-  text.appendChild(paragraph);
-}
